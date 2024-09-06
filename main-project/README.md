@@ -32,4 +32,4 @@ Contributions are welcome! Please follow these guidelines:
 - No need to create a fork of this repo.
 - No need to create a new branch of your own.
 - I will add everyone as a contributor in this repo so everyone can directly edit the files in this repo.
-- Make your changes and directy git add them.
+- Make your changes in the main branch and directy git add them.
