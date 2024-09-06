@@ -1,0 +1,56 @@
+{
+  "participants": [
+    {
+      "name": "RSC"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1713425663077,
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3348779356951389731"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "RSC",
+      "timestamp_ms": 1713422959184,
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "RSC",
+      "timestamp_ms": 1713422690919,
+      "content": "Happy Birthday vivek bhaiya \u00f0\u009f\u0092\u00a5",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "RSC",
+      "timestamp_ms": 1710582083530,
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1710558500719,
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3324728001106346428"
+      },
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "RSC",
+  "is_still_participant": true,
+  "thread_path": "inbox/rsc_866621864738513",
+  "magic_words": [
+    
+  ]
+}

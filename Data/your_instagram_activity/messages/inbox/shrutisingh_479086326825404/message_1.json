@@ -1,0 +1,84 @@
+{
+  "participants": [
+    {
+      "name": "Shruti Singh\u00f0\u009f\u0090\u00a3"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719197171277,
+      "content": "Are bilkul",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Shruti Singh\u00f0\u009f\u0090\u00a3",
+      "timestamp_ms": 1719166814246,
+      "content": "moti mahal hora thoda renovate\u00f0\u009f\u0098\u0085",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Shruti Singh\u00f0\u009f\u0090\u00a3",
+      "timestamp_ms": 1719166794612,
+      "content": "aa jao korba fr krte hai party",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Shruti Singh\u00f0\u009f\u0090\u00a3",
+      "timestamp_ms": 1719166777824,
+      "content": "\u00e0\u00ae\u00ae\u00e0\u00af\u0086\u00e0\u00ae\u009a\u00e0\u00af\u0087\u00e0\u00ae\u009c\u00e0\u00af\u0088 \u00e0\u00ae\u00b5\u00e0\u00ae\u00bf\u00e0\u00ae\u00b0\u00e0\u00af\u0081\u00e0\u00ae\u00ae\u00e0\u00af\u008d\u00e0\u00ae\u00aa\u00e0\u00ae\u00bf\u00e0\u00ae\u00af\u00e0\u00af\u0081\u00e0\u00ae\u00b3\u00e0\u00af\u008d\u00e0\u00ae\u00b3\u00e0\u00ae\u00be\u00e0\u00ae\u00b0\u00e0\u00af\u008d",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Shruti Singh\u00f0\u009f\u0090\u00a3",
+      "timestamp_ms": 1719166768408,
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719160109639,
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Shruti Singh\u00f0\u009f\u0090\u00a3"
+        }
+      ],
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3396883513939438576"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719159935477,
+      "content": "Party hardddd!!!!",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719159927424,
+      "content": "shruuu__ti___ wasn't notified about this message because they're in quiet mode.",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719159927208,
+      "content": "Happy birthday Shruti \u00e2\u009c\u00a8\u00e2\u009c\u00a8\u00f0\u009f\u008e\u0082\u00f0\u009f\u008e\u0082",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Shruti Singh\u00f0\u009f\u0090\u00a3",
+      "timestamp_ms": 1713421575347,
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "Shruti Singh\u00f0\u009f\u0090\u00a3",
+  "is_still_participant": true,
+  "thread_path": "inbox/shrutisingh_479086326825404",
+  "magic_words": [
+    
+  ]
+}

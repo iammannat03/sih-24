@@ -1,0 +1,54 @@
+{
+  "participants": [
+    {
+      "name": "Rezki Amalia Syakir"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719458949265,
+      "content": "What about you?",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719458717790,
+      "content": "I am great",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Rezki Amalia Syakir",
+      "timestamp_ms": 1719450823733,
+      "content": "How are you?",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Rezki Amalia Syakir",
+      "timestamp_ms": 1719450771454,
+      "content": "Haiii",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1719421364426,
+      "content": "Hello",
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "Rezki Amalia Syakir",
+  "is_still_participant": true,
+  "thread_path": "inbox/rezkiamaliasyakir_1437500267650667",
+  "magic_words": [
+    
+  ]
+}

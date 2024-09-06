@@ -1,0 +1,58 @@
+{
+  "text_post_app_text_post_app_profile": [
+    {
+      "title": "",
+      "media_map_data": {
+        "Profile photo": {
+          "uri": "media/other/359734009_555298529962164_5018426617506449794_n_17983593392206875.jpg",
+          "creation_timestamp": 1688995915,
+          "media_metadata": {
+            "camera_metadata": {
+              "has_camera_metadata": false
+            }
+          },
+          "title": "",
+          "cross_post_source": {
+            "source_app": "FB"
+          },
+          "text_app_post": {
+            "reply_control": "everyone",
+            "geo_gated_country_list": ""
+          }
+        }
+      },
+      "string_map_data": {
+        "Bio": {
+          "href": "",
+          "value": "",
+          "timestamp": 0
+        },
+        "Private account": {
+          "href": "",
+          "value": "False",
+          "timestamp": 0
+        },
+        "Links": {
+          "href": "",
+          "value": "",
+          "timestamp": 0
+        },
+        "Onboarding time": {
+          "href": "",
+          "value": "",
+          "timestamp": 1688995915
+        },
+        "Is eligible for profile activation badge": {
+          "href": "",
+          "value": "False",
+          "timestamp": 0
+        },
+        "Profile shows activation badge": {
+          "href": "",
+          "value": "False",
+          "timestamp": 0
+        }
+      }
+    }
+  ]
+}

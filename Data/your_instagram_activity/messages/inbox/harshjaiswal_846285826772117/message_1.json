@@ -1,0 +1,30 @@
+{
+  "participants": [
+    {
+      "name": "harsh Jaiswal"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "harsh Jaiswal",
+      "timestamp_ms": 1713500914459,
+      "content": "Happy birthday bhai",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "harsh Jaiswal",
+  "is_still_participant": true,
+  "thread_path": "inbox/harshjaiswal_846285826772117",
+  "magic_words": [
+    
+  ]
+}

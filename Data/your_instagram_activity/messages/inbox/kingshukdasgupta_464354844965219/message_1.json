@@ -1,0 +1,39 @@
+{
+  "participants": [
+    {
+      "name": "Kingshuk Dasgupta"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1713419235933,
+      "content": "Thank you so much",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Kingshuk Dasgupta",
+      "timestamp_ms": 1713417952703,
+      "content": "Happy Birthday Bro \u00f0\u009f\u008e\u0082",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3348705293587243449"
+      },
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "Kingshuk Dasgupta",
+  "is_still_participant": true,
+  "thread_path": "inbox/kingshukdasgupta_464354844965219",
+  "magic_words": [
+    
+  ]
+}

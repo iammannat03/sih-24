@@ -1,0 +1,45 @@
+{
+  "participants": [
+    {
+      "name": "S H A S H A N K"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1725297385868,
+      "content": "Badhiya bhai",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "S H A S H A N K",
+      "timestamp_ms": 1725296813143,
+      "content": "Sup buddy kaisa hai?",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "S H A S H A N K",
+      "timestamp_ms": 1725296739837,
+      "content": "Bro shave mtt kiya krr vo tujhe suit krti hai",
+      "reactions": [
+        {
+          "reaction": "\u00f0\u009f\u0098\u00a2",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3448333350291950495"
+      },
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "S H A S H A N K",
+  "is_still_participant": true,
+  "thread_path": "inbox/shashank_503433084390728",
+  "magic_words": [
+    
+  ]
+}

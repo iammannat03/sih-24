@@ -1,0 +1,36 @@
+{
+  "participants": [
+    {
+      "name": "Amal"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1713456811766,
+      "content": "Thank u so much bhai",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Amal",
+      "timestamp_ms": 1713441108818,
+      "content": "Happy bday bhai \u00f0\u009f\u008e\u0082",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "Amal",
+  "is_still_participant": true,
+  "thread_path": "inbox/amal_1383204053080289",
+  "magic_words": [
+    
+  ]
+}

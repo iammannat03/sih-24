@@ -1,0 +1,104 @@
+{
+  "participants": [
+    {
+      "name": "Aviral Srivastava"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Aviral Srivastava",
+      "timestamp_ms": 1713452792775,
+      "content": "\u00e0\u00ae\u00ae\u00e0\u00af\u0086\u00e0\u00ae\u009a\u00e0\u00af\u0087\u00e0\u00ae\u009c\u00e0\u00af\u0088 \u00e0\u00ae\u00b5\u00e0\u00ae\u00bf\u00e0\u00ae\u00b0\u00e0\u00af\u0081\u00e0\u00ae\u00ae\u00e0\u00af\u008d\u00e0\u00ae\u00aa\u00e0\u00ae\u00bf\u00e0\u00ae\u00af\u00e0\u00af\u0081\u00e0\u00ae\u00b3\u00e0\u00af\u008d\u00e0\u00ae\u00b3\u00e0\u00ae\u00be\u00e0\u00ae\u00b0\u00e0\u00af\u008d",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1713416641093,
+      "content": "Thank u so much aviral sir \u00e2\u009d\u00a4\u00ef\u00b8\u008f\u00e2\u009d\u00a4\u00ef\u00b8\u008f",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Aviral Srivastava"
+        }
+      ],
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Aviral Srivastava",
+      "timestamp_ms": 1713415938582,
+      "content": "Janamdin mubarak bhai \u00e2\u009c\u00a8\u00ef\u00b8\u008f\u00f0\u009f\u00a5\u00b3",
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3348668114051989779"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Aviral Srivastava",
+      "timestamp_ms": 1705599432157,
+      "content": "Aviral sent an attachment.",
+      "share": {
+        "link": "https://www.instagram.com/p/C2QA-OOyAqTRKyI54hTb1nQESVMxr6LOMA1Yis0/?carousel_share_child_media_id=3283128404241025683_8047245647",
+        "share_text": "\u00e2\u0080\u009cListen, I have a plan.\u00e2\u0080\u009d This short sentence is the start of something legendary!",
+        "original_content_owner": "whyaviralwhy"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Aviral Srivastava",
+      "timestamp_ms": 1705425724498,
+      "share": {
+        "link": "https://instagram.com/stories/whyaviralwhy/3281671211654405958"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1705418918244,
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3281614072683928013"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Aviral Srivastava",
+      "timestamp_ms": 1705340939072,
+      "share": {
+        "link": "https://instagram.com/stories/whyaviralwhy/3280957891792298686"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Aviral Srivastava",
+      "timestamp_ms": 1705295868587,
+      "share": {
+        "link": "https://instagram.com/stories/whyaviralwhy/3280573060675754642"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1705104434946,
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3278976016738702088"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Aviral Srivastava",
+      "timestamp_ms": 1705102903157,
+      "share": {
+        "link": "https://instagram.com/stories/whyaviralwhy/3278963120336905032"
+      },
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "Aviral Srivastava",
+  "is_still_participant": true,
+  "thread_path": "inbox/aviralsrivastava_1320901269310568",
+  "magic_words": [
+    
+  ]
+}

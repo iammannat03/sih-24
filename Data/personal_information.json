@@ -1,0 +1,74 @@
+{
+  "profile_user": [
+    {
+      "title": "User information",
+      "media_map_data": {
+        "Profile photo": {
+          "uri": "media/other/434293991_1768990100293543_7501731225373689426_n_17990980580404846.jpg",
+          "creation_timestamp": 1711199124,
+          "media_metadata": {
+            "camera_metadata": {
+              "has_camera_metadata": false
+            }
+          },
+          "title": "",
+          "cross_post_source": {
+            "source_app": "FB"
+          }
+        }
+      },
+      "string_map_data": {
+        "Email address": {
+          "href": "",
+          "value": "viveknath2003@gmail.com",
+          "timestamp": 0
+        },
+        "Phone number": {
+          "href": "",
+          "value": "+919340483705",
+          "timestamp": 0
+        },
+        "Phone number confirmed": {
+          "href": "",
+          "value": "True",
+          "timestamp": 0
+        },
+        "Phone confirmation method": {
+          "href": "",
+          "value": "Auto",
+          "timestamp": 0
+        },
+        "Username": {
+          "href": "",
+          "value": "_vivx003",
+          "timestamp": 0
+        },
+        "Name": {
+          "href": "",
+          "value": "Vivek Nath",
+          "timestamp": 0
+        },
+        "Bio": {
+          "href": "",
+          "value": "VIT CSE \" 26 \nRPR\u00e2\u0086\u0094\u00ef\u00b8\u008fCN",
+          "timestamp": 0
+        },
+        "Gender": {
+          "href": "",
+          "value": "male",
+          "timestamp": 0
+        },
+        "Date of birth": {
+          "href": "",
+          "value": "1997-04-18",
+          "timestamp": 0
+        },
+        "Private account": {
+          "href": "",
+          "value": "False",
+          "timestamp": 0
+        }
+      }
+    }
+  ]
+}

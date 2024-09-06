@@ -1,0 +1,17 @@
+{
+  "subscriptions_show_story_teaser_setting": [
+    {
+      "title": "",
+      "media_map_data": {
+        
+      },
+      "string_map_data": {
+        "Exclusive story promo setting": {
+          "href": "",
+          "value": "False",
+          "timestamp": 0
+        }
+      }
+    }
+  ]
+}

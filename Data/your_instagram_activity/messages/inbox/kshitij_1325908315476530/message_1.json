@@ -1,0 +1,92 @@
+{
+  "participants": [
+    {
+      "name": "kshitij"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "kshitij",
+      "timestamp_ms": 1725333361001,
+      "content": "Aree sir kab or kaise",
+      "reactions": [
+        {
+          "reaction": "\u00f0\u009f\u0098\u00ae",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3448333350291950495"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "kshitij",
+      "timestamp_ms": 1719081561949,
+      "content": "\u00f0\u009f\u0094\u00a5",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3396137314206031240"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "kshitij",
+      "timestamp_ms": 1713419156707,
+      "content": "\u00e0\u00ae\u00ae\u00e0\u00af\u0086\u00e0\u00ae\u009a\u00e0\u00af\u0087\u00e0\u00ae\u009c\u00e0\u00af\u0088 \u00e0\u00ae\u00b5\u00e0\u00ae\u00bf\u00e0\u00ae\u00b0\u00e0\u00af\u0081\u00e0\u00ae\u00ae\u00e0\u00af\u008d\u00e0\u00ae\u00aa\u00e0\u00ae\u00bf\u00e0\u00ae\u00af\u00e0\u00af\u0081\u00e0\u00ae\u00b3\u00e0\u00af\u008d\u00e0\u00ae\u00b3\u00e0\u00ae\u00be\u00e0\u00ae\u00b0\u00e0\u00af\u008d",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1713416597012,
+      "content": "Thank u so much bhai",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "kshitij"
+        }
+      ],
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "kshitij",
+      "timestamp_ms": 1713413370587,
+      "content": "Happy birthday sirji\u00f0\u009f\u00a5\u00b3\u00f0\u009f\u00a5\u0082",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3348668114051989779"
+      },
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "kshitij",
+      "timestamp_ms": 1705760426994,
+      "content": "kshitij sent an attachment.",
+      "share": {
+        "link": "https://www.instagram.com/p/C2U0DBTL36abAeUcH2lphcEsDN4CWyPRqDmU2E0/?carousel_share_child_media_id=3284478934232563354_41613805326",
+        "share_text": "Here's unfolding my Chapter 4 with an extraordinary adventure\u00e2\u0080\u0094my phenomenal friends and I embarking on an unforgettable trip! \u00f0\u009f\u008c\u009f\u00f0\u009f\u0097\u00ba\u00ef\u00b8\u008f",
+        "original_content_owner": "kshitij_kumar___"
+      },
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "kshitij",
+  "is_still_participant": true,
+  "thread_path": "inbox/kshitij_1325908315476530",
+  "magic_words": [
+    
+  ]
+}

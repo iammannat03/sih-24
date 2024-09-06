@@ -1,0 +1,37 @@
+{
+  "participants": [
+    {
+      "name": "Hardik Hasani"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Hardik Hasani",
+      "timestamp_ms": 1705419164559,
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1705418921299,
+      "content": "hasa.ni2k wasn't notified about this message because they're in quiet mode.",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1705418919262,
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3281614072683928013"
+      },
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "Hardik Hasani",
+  "is_still_participant": true,
+  "thread_path": "inbox/hardikhasani_1323258849074810",
+  "magic_words": [
+    
+  ]
+}

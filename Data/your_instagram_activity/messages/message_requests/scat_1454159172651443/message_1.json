@@ -1,0 +1,25 @@
+{
+  "participants": [
+    {
+      "name": "S..Cat\u00f0\u009f\u008d\u0082\u00f0\u009f\u00a6\u008b"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "S..Cat\u00f0\u009f\u008d\u0082\u00f0\u009f\u00a6\u008b",
+      "timestamp_ms": 1720189083520,
+      "content": "Oi",
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "S..Cat\u00f0\u009f\u008d\u0082\u00f0\u009f\u00a6\u008b",
+  "is_still_participant": true,
+  "thread_path": "message_requests/scat_1454159172651443",
+  "magic_words": [
+    
+  ],
+  "is_pending": true
+}

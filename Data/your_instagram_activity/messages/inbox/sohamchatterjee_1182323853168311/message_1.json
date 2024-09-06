@@ -1,0 +1,147 @@
+{
+  "participants": [
+    {
+      "name": "Soham Chatterjee"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1720868985057,
+      "content": "Freecodecamp AWS cloud practitioner, ek 14 hr ka video",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868936496,
+      "content": "?",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868935011,
+      "content": "Youtube p kaha se",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1720868896342,
+      "content": "Han meine 1-2 weeks padha, then direct exam",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868880624,
+      "content": "?",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868878825,
+      "content": "Fer direct exam",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1720868868405,
+      "content": "Freecodecamp best hai",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1720868850660,
+      "content": "Aur Stephanie Marek ka ek ppt hai woh refer Kiya tha ,that's it",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1720868820868,
+      "content": "Aree bhai meine toh pura YouTube se padha tha",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868524965,
+      "content": "Maise start kre",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868521383,
+      "content": "Bhai",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868519414,
+      "content": "Thoda guide kro",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868514657,
+      "content": "Mere ko bhi start krna h",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1720868411025,
+      "content": "Aree thanks bhai \u00f0\u009f\u0098\u0085",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1720868388312,
+      "content": "Congratulations",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1713429231913,
+      "content": "\u00e0\u00ae\u00ae\u00e0\u00af\u0086\u00e0\u00ae\u009a\u00e0\u00af\u0087\u00e0\u00ae\u009c\u00e0\u00af\u0088 \u00e0\u00ae\u00b5\u00e0\u00ae\u00bf\u00e0\u00ae\u00b0\u00e0\u00af\u0081\u00e0\u00ae\u00ae\u00e0\u00af\u008d\u00e0\u00ae\u00aa\u00e0\u00ae\u00bf\u00e0\u00ae\u00af\u00e0\u00af\u0081\u00e0\u00ae\u00b3\u00e0\u00af\u008d\u00e0\u00ae\u00b3\u00e0\u00ae\u00be\u00e0\u00ae\u00b0\u00e0\u00af\u008d",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1713424572429,
+      "content": "\u00e2\u009d\u00a4\u00ef\u00b8\u008f\u00e2\u009d\u00a4\u00ef\u00b8\u008f",
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Vivek Nath",
+      "timestamp_ms": 1713424570807,
+      "content": "Thank you so much soham bhai",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Soham Chatterjee"
+        }
+      ],
+      "is_geoblocked_for_viewer": false
+    },
+    {
+      "sender_name": "Soham Chatterjee",
+      "timestamp_ms": 1713422069459,
+      "content": "Aur Vivek Bhai Happy Birthday \u00f0\u009f\u008e\u0088\u00f0\u009f\u008e\u0082\u00f0\u009f\u008e\u0082!!!",
+      "reactions": [
+        {
+          "reaction": "\u00e2\u009d\u00a4",
+          "actor": "Vivek Nath"
+        }
+      ],
+      "share": {
+        "link": "https://instagram.com/stories/_vivx003/3348705293587243449"
+      },
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "Soham Chatterjee",
+  "is_still_participant": true,
+  "thread_path": "inbox/sohamchatterjee_1182323853168311",
+  "magic_words": [
+    
+  ]
+}

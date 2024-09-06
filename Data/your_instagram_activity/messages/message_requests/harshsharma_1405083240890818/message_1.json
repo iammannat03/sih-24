@@ -1,0 +1,25 @@
+{
+  "participants": [
+    {
+      "name": "H\u00c3\u00a0rsh Sh\u00c3\u00a4rm\u00c3\u00a0"
+    },
+    {
+      "name": "Vivek Nath"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "H\u00c3\u00a0rsh Sh\u00c3\u00a4rm\u00c3\u00a0",
+      "timestamp_ms": 1713442079415,
+      "content": "Happy Birthday Vivek\u00e2\u009d\u00a4\u00ef\u00b8\u008f\u00f0\u009f\u0094\u00a5\u00e2\u009c\u00a8\u00f0\u009f\u008e\u0082",
+      "is_geoblocked_for_viewer": false
+    }
+  ],
+  "title": "H\u00c3\u00a0rsh Sh\u00c3\u00a4rm\u00c3\u00a0",
+  "is_still_participant": true,
+  "thread_path": "message_requests/harshsharma_1405083240890818",
+  "magic_words": [
+    
+  ],
+  "is_pending": true
+}
