@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:spynetra_tmp/widgets/folders.dart';
-import 'package:spynetra_tmp/constants/constants.dart';
-import 'package:spynetra_tmp/pages/pdf_view.dart';
-
-//this is the section for documents of suspect
+import 'package:spynetra_tmp/widgets/folders.dart'; // Assuming FolderIcon widget exists
+import 'package:spynetra_tmp/constants/constants.dart'; // Assuming Pallete and constants are defined
+import 'package:spynetra_tmp/pages/pdf_view.dart'; // Assuming PDF viewing is handled elsewhere
 
 class SuspectDetail extends StatefulWidget {
   final String suspectName;
@@ -50,8 +48,7 @@ class SuspectDetailState extends State<SuspectDetail> {
     await prefs.setStringList('documents_${widget.suspectName}', docStrings);
   }
 
-//pop up for adding details of document
-
+  // Pop-up for adding details of a document
   void _showAddDocumentDialog() {
     TextEditingController urlController = TextEditingController();
     TextEditingController usernameController = TextEditingController();
@@ -66,7 +63,6 @@ class SuspectDetailState extends State<SuspectDetail> {
             return AlertDialog(
               title: const Text('Add Document'),
               content: SingleChildScrollView(
-                // Added scrollable view
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -74,10 +70,10 @@ class SuspectDetailState extends State<SuspectDetail> {
                       controller: urlController,
                       decoration: InputDecoration(
                         hintText: 'Enter URL',
-                        errorText:
-                            errorMessage != null && urlController.text.isEmpty
-                                ? 'URL is required'
-                                : null,
+                        errorText: errorMessage != null &&
+                                urlController.text.isEmpty
+                            ? 'URL is required'
+                            : null,
                       ),
                     ),
                     const SizedBox(height: 10.0),
@@ -131,8 +127,8 @@ class SuspectDetailState extends State<SuspectDetail> {
                         });
                         _saveDocuments();
                         Navigator.of(context).pop();
+                        // Navigate to Document Detail Screen
                         Navigator.push(
-                          // handle the generate document button, for now it's navigating to DocumentDetialScreen
                           context,
                           MaterialPageRoute(
                             builder: (context) => DocumentDetailScreen(
@@ -158,8 +154,7 @@ class SuspectDetailState extends State<SuspectDetail> {
     );
   }
 
-//displaying the created document folder
-
+  // Displaying the created document folders
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -210,7 +205,7 @@ class SuspectDetailState extends State<SuspectDetail> {
                                 child: FolderIcon(
                                   text: _documents[index]['url']!,
                                   onTap: () {
-                                    // Handle folder tap
+                                    // Handle folder tap to show document details
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(

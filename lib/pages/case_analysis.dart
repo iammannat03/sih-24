@@ -1,6 +1,9 @@
 //this is the page which has case details. Panchnama, Sus list etc. below handle the punchnama folder click, and others too except the sus list
 
 import 'package:flutter/material.dart';
+import 'package:spynetra_tmp/pages/call_detail_record.dart';
+import 'package:spynetra_tmp/pages/case_documentation.dart';
+import 'package:spynetra_tmp/pages/punch_screen.dart';
 import 'package:spynetra_tmp/widgets/folders.dart';
 import 'package:spynetra_tmp/pages/suspect_list.dart';
 
@@ -54,14 +57,25 @@ class CaseAnalysis extends StatelessWidget {
                         FolderIcon(
                           text: 'Punchnama',
                           onTap: () {
-                            // Handle Punchnama folder click
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    PunchScreen(caseTitle: caseTitle),
+                              ),
+                            );
                           },
                           iconSize: iconSize,
                         ),
                         FolderIcon(
                           text: 'Case Documentation',
                           onTap: () {
-                            // Handle Case Documentation folder click
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CaseDocumentation(),
+                              ),
+                            );
                           },
                           iconSize: iconSize,
                         ),
@@ -81,7 +95,11 @@ class CaseAnalysis extends StatelessWidget {
                         FolderIcon(
                           text: 'CDR List',
                           onTap: () {
-                            // handle CDR List folder click
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const CallDetailRecord()));
                           },
                           iconSize: iconSize,
                         ),
