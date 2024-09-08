@@ -1,0 +1,5 @@
+flask
+zipfile
+json
+python-dotenv
+reportlab
