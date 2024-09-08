@@ -1,10 +1,11 @@
-import 'dart:io'; // For File operations
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
-import 'package:http_parser/http_parser.dart'; // Import for MediaType
+import 'package:http_parser/http_parser.dart';
 import 'package:path/path.dart';
-import 'package:spynetra_tmp/constants/constants.dart'; // For file path operations
+import 'dart:convert';
+import 'package:spynetra_tmp/constants/constants.dart';
 
 class DocumentDetailScreen extends StatefulWidget {
   final Map<String, String> document;
@@ -19,8 +20,33 @@ class DocumentDetailScreenState extends State<DocumentDetailScreen> {
   String? _selectedFileName;
   File? _selectedFile;
   bool _isUploading = false;
+  Map<String, dynamic>? _apiResponse;
 
-  // Allow the user to pick a zip file
+  @override
+  void initState() {
+    super.initState();
+    _fetchDocumentDetails();
+  }
+
+  // Method to fetch document details from API
+  Future<void> _fetchDocumentDetails() async {
+    const url = 'http://10.0.2.2:5001/download';
+    try {
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        setState(() {
+          _apiResponse = json.decode(response.body);
+        });
+      } else {
+        print('Failed to download!');
+      }
+    } catch (e) {
+      print('error ${e}');
+    }
+  }
+
+  // Method to allow the user to pick a zip file
   Future<void> _pickZipFile() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
@@ -35,12 +61,10 @@ class DocumentDetailScreenState extends State<DocumentDetailScreen> {
     }
   }
 
-  // Function to upload the selected file to the backend
+  // Method to upload the selected file to the backend
   Future<void> _uploadFile() async {
     if (_selectedFile == null) {
-      ScaffoldMessenger.of(context as BuildContext).showSnackBar(
-        const SnackBar(content: Text('No file selected')),
-      );
+      print('No file selected');
       return;
     }
 
@@ -49,9 +73,8 @@ class DocumentDetailScreenState extends State<DocumentDetailScreen> {
     });
 
     try {
-      final uri = Uri.parse('https://your-backend-api.com/upload');
+      final uri = Uri.parse('http://10.0.2.2:5001/upload');
       final request = http.MultipartRequest('POST', uri);
-
       final fileStream = http.ByteStream(_selectedFile!.openRead());
       final fileLength = await _selectedFile!.length();
 
@@ -65,25 +88,15 @@ class DocumentDetailScreenState extends State<DocumentDetailScreen> {
 
       request.files.add(multipartFile);
 
-      // Send the request
       final response = await request.send();
 
       if (response.statusCode == 200) {
-        // Success
-        ScaffoldMessenger.of(context as BuildContext).showSnackBar(
-          const SnackBar(content: Text('File uploaded successfully')),
-        );
+        print('File upload successfully');
       } else {
-        // Failure
-        ScaffoldMessenger.of(context as BuildContext).showSnackBar(
-          const SnackBar(content: Text('File upload failed')),
-        );
+        print('File upload failed!');
       }
     } catch (e) {
-      // Error
-      ScaffoldMessenger.of(context as BuildContext).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
-      );
+      print("Error: ${e}");
     } finally {
       setState(() {
         _isUploading = false;
@@ -108,24 +121,37 @@ class DocumentDetailScreenState extends State<DocumentDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('URL: ${widget.document['url']}',
-                style: const TextStyle(fontSize: 16.0, color: Pallete.text)),
-            const SizedBox(height: 10.0),
-            Text('Username: ${widget.document['username']}',
-                style: const TextStyle(fontSize: 16.0, color: Pallete.text)),
-            const SizedBox(height: 10.0),
-            Text('Password: ${widget.document['password']}',
-                style: const TextStyle(fontSize: 16.0, color: Colors.red)),
+            if (_apiResponse != null) _buildDocumentDetails(),
             const SizedBox(height: 20.0),
             _buildFileUploadSection(),
             const SizedBox(height: 20.0),
-            if (_isUploading) const Center(child: CircularProgressIndicator())
+            if (_isUploading) const Center(child: CircularProgressIndicator()),
           ],
         ),
       ),
     );
   }
 
+  // Widget to display document details
+  Widget _buildDocumentDetails() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Title: ${_apiResponse!['title']}',
+          style: const TextStyle(fontSize: 16.0, color: Pallete.text),
+        ),
+        const SizedBox(height: 10.0),
+        Text(
+          'Description: ${_apiResponse!['description']}',
+          style: const TextStyle(fontSize: 16.0, color: Pallete.text),
+        ),
+        const SizedBox(height: 10.0),
+      ],
+    );
+  }
+
+  // Widget to build the file upload section
   Widget _buildFileUploadSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -142,7 +168,10 @@ class DocumentDetailScreenState extends State<DocumentDetailScreen> {
         if (_selectedFileName != null)
           Text(
             'Selected File: $_selectedFileName',
-            style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         const SizedBox(height: 20.0),
         if (_selectedFile != null)
