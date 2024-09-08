@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:spynetra_tmp/constants/constants.dart';
 
 class CallDetailRecord extends StatefulWidget {
   const CallDetailRecord({super.key});
 
   @override
-  _CallDetailRecordState createState() => _CallDetailRecordState();
+  CallDetailRecordState createState() => CallDetailRecordState();
 }
 
-class _CallDetailRecordState extends State<CallDetailRecord> {
+class CallDetailRecordState extends State<CallDetailRecord> {
   // Hardcoded list of call records
   final List<Map<String, String>> callRecords = [
     {
-      'caller': ' Mannat Jaiswal',
+      'caller': 'Mannat Jaiswal',
       'time': '10:30 AM',
       'duration': '5 mins',
       'status': 'Completed',
@@ -67,8 +68,19 @@ class _CallDetailRecordState extends State<CallDetailRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Pallete.screen,
       appBar: AppBar(
-        title: const Text('Call Detail Records'),
+        backgroundColor: Pallete.appbar,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          'Call Detail Records',
+          style: TextStyle(color: Pallete.text),
+        ),
       ),
       body: Column(
         children: [
@@ -76,13 +88,17 @@ class _CallDetailRecordState extends State<CallDetailRecord> {
             padding: const EdgeInsets.all(16.0),
             child: TextField(
               controller: _searchController,
+              style:
+                  const TextStyle(color: Pallete.text), // Set text color here
               decoration: InputDecoration(
                 labelText: 'Search Calls',
                 hintText: 'Enter caller name or status',
-                prefixIcon: const Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search, color: Pallete.text),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
+                labelStyle: const TextStyle(color: Pallete.text),
+                hintStyle: TextStyle(color: Pallete.text.withOpacity(0.6)),
               ),
             ),
           ),
@@ -103,6 +119,7 @@ class _CallDetailRecordState extends State<CallDetailRecord> {
 
   Widget _buildCallRecordTile(Map<String, String> record) {
     return Card(
+      color: Pallete.card,
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       elevation: 4.0,
       child: ListTile(
@@ -114,25 +131,37 @@ class _CallDetailRecordState extends State<CallDetailRecord> {
             color: Colors.white,
           ),
         ),
-        title: Text(record['caller'] ?? '',
-            style:
-                const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+        title: Text(
+          record['caller'] ?? '',
+          style: const TextStyle(
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
+            color: Pallete.text,
+          ),
+        ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 5),
-            Text('Time: ${record['time']}',
-                style: const TextStyle(fontSize: 14.0)),
+            Text(
+              'Time: ${record['time']}',
+              style: const TextStyle(fontSize: 14.0, color: Pallete.text),
+            ),
             const SizedBox(height: 3),
-            Text('Duration: ${record['duration']}',
-                style: const TextStyle(fontSize: 14.0)),
+            Text(
+              'Duration: ${record['duration']}',
+              style: const TextStyle(fontSize: 14.0, color: Pallete.text),
+            ),
           ],
         ),
-        trailing: Text(record['status'] ?? '',
-            style: TextStyle(
-                fontSize: 14.0,
-                color: record['status'] == 'Missed' ? Colors.red : Colors.green,
-                fontWeight: FontWeight.bold)),
+        trailing: Text(
+          record['status'] ?? '',
+          style: TextStyle(
+            fontSize: 14.0,
+            color: record['status'] == 'Missed' ? Colors.red : Colors.green,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

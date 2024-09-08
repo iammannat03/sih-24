@@ -1,10 +1,13 @@
-//this is the main screen which has the options to add new case. Used shared pref for storing the state of page
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:spynetra_tmp/pages/sidebar_pages/faq_page.dart';
+import 'package:spynetra_tmp/pages/sidebar_pages/profile_page.dart';
+import 'package:spynetra_tmp/pages/sidebar_pages/settings_page.dart';
+// import 'package:spynetra_tmp/pages/punch_screen.dart';
 import 'package:spynetra_tmp/widgets/folders.dart';
 import 'package:spynetra_tmp/constants/constants.dart';
 import 'package:spynetra_tmp/pages/case_analysis.dart';
+import 'package:spynetra_tmp/widgets/sidebar.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -29,9 +32,7 @@ class MainScreenState extends State<MainScreen> {
       setState(() {
         _cases = savedCases.map((caseString) {
           final caseData = caseString;
-          return {
-            'title': caseData,
-          };
+          return {'title': caseData};
         }).toList();
       });
     }
@@ -44,8 +45,6 @@ class MainScreenState extends State<MainScreen> {
     }).toList();
     await prefs.setStringList('cases', caseStrings);
   }
-
-//this is the dialog box that pops up for adding new case
 
   void _showAddCaseDialog() {
     TextEditingController caseTitleController = TextEditingController();
@@ -101,58 +100,152 @@ class MainScreenState extends State<MainScreen> {
     );
   }
 
-  /* void deleteCase(int index) async {
-    final bool? confirmDelete = await showDialog<bool>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Delete Case'),
-          content: const Text('Are you sure you want to delete this case?'),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop(false);
-              },
-            ),
-            TextButton(
-              child: const Text('Delete'),
-              onPressed: () {
-                Navigator.of(context).pop(true);
-              },
-            ),
-          ],
-        );
-      },
-    );
-
-    if (confirmDelete == true) {
-      setState(() {
-        _cases.removeAt(index);
-        _saveCases();
-      });
-    }
-  }
- */
-
-//here is the layout of the screen, arrangement of folders on the page
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          int crossAxisCount;
-          if (constraints.maxWidth < 600) {
-            crossAxisCount = 2;
-          } else if (constraints.maxWidth < 1200) {
-            crossAxisCount = 3;
-          } else {
-            crossAxisCount = 5;
-          }
-
-          return Center(
-            child: Padding(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth >= 1200) {
+          // Desktop version
+          return Scaffold(
+            backgroundColor: Colors.black,
+            body: Row(
+              children: [
+                // Sidebar content
+                Container(
+                  width: 250.0, // Width of the sidebar
+                  color: Colors.black,
+                  child: Column(
+                    children: [
+                      // Logo at the top
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: SizedBox(
+                          width: 230,
+                          height: 100,
+                          child: Image.asset('assets/logo.png'),
+                        ),
+                      ),
+                      const SizedBox(height: 30.0), // Space below the logo
+                      // Sidebar options
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              _buildSidebarItem(context, Icons.folder, 'Cases',
+                                  const MainScreen()),
+                              _buildSidebarItem(context, Icons.settings,
+                                  'Settings', const SettingsScreen()),
+                              _buildSidebarItem(context, Icons.person,
+                                  'Profile', const ProfilePage()),
+                              _buildSidebarItem(
+                                  context, Icons.help, 'FAQ', const FaqPage()),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[
+                            850], // Grey container with smooth round edges
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Cases",
+                            style: TextStyle(fontSize: 24, color: Colors.white),
+                          ),
+                          const SizedBox(height: 24.0),
+                          Expanded(
+                            child: _cases.isEmpty
+                                ? const Center(
+                                    child: Text(
+                                      'No cases added yet.',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  )
+                                : GridView.builder(
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 5,
+                                      crossAxisSpacing: 16.0,
+                                      mainAxisSpacing: 16.0,
+                                      childAspectRatio: 1.2,
+                                    ),
+                                    itemCount: _cases.length,
+                                    itemBuilder: (context, index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CaseAnalysis(
+                                                caseTitle: _cases[index]
+                                                    ['title']!,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: FolderIcon(
+                                          text: _cases[index]['title']!,
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CaseAnalysis(
+                                                  caseTitle: _cases[index]
+                                                      ['title']!,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          iconSize: 100,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            floatingActionButton: SizedBox(
+              width: 200.0,
+              height: 50.0,
+              child: ElevatedButton(
+                onPressed: _showAddCaseDialog,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Pallete.plusButton,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                child: const Text(
+                  ' + Add Case',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          );
+        } else {
+          // Mobile and tablet version with sidebar
+          return BaseScaffold(
+            body: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: constraints.maxWidth < 600 ? 16.0 : 32.0,
                 vertical: 16.0,
@@ -163,7 +256,7 @@ class MainScreenState extends State<MainScreen> {
                   const SizedBox(height: 30),
                   const Text(
                     "Cases",
-                    style: TextStyle(fontSize: 24),
+                    style: TextStyle(fontSize: 30, color: Colors.white),
                   ),
                   const SizedBox(height: 24.0),
                   Expanded(
@@ -174,7 +267,9 @@ class MainScreenState extends State<MainScreen> {
                         : GridView.builder(
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: crossAxisCount,
+                              crossAxisCount: constraints.maxWidth < 600
+                                  ? 2
+                                  : 3, // 2 for mobile, 3 for tablet
                               crossAxisSpacing: 0.0,
                               mainAxisSpacing: 0.0,
                               childAspectRatio: 1.2,
@@ -213,37 +308,72 @@ class MainScreenState extends State<MainScreen> {
                 ],
               ),
             ),
-          );
-        },
-      ),
+            floatingActionButton: LayoutBuilder(
+              builder: (context, constraints) {
+                double buttonWidth = constraints.maxWidth < 600
+                    ? constraints.maxWidth * 0.8
+                    : 200.0;
 
-      //add-case button
-
-      floatingActionButton: LayoutBuilder(
-        builder: (context, constraints) {
-          double buttonWidth =
-              constraints.maxWidth < 600 ? constraints.maxWidth * 0.8 : 200.0;
-
-          return SizedBox(
-            width: buttonWidth,
-            height: 50.0,
-            child: ElevatedButton(
-              onPressed: _showAddCaseDialog,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Pallete.plusButton,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-              ),
-              child: const Text(
-                ' + Add Case',
-                style: TextStyle(color: Colors.white),
-              ),
+                return SizedBox(
+                  width: buttonWidth,
+                  height: 50.0,
+                  child: ElevatedButton(
+                    onPressed: _showAddCaseDialog,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Pallete.plusButton,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Text(
+                      ' + Add Case',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                );
+              },
             ),
+            floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
           );
-        },
+        }
+      },
+    );
+  }
+
+  Widget _buildSidebarItem(
+      BuildContext context, IconData icon, String text, Widget destination) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => destination,
+          ),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+        decoration: BoxDecoration(
+          color: text == 'Cases'
+              ? Colors.grey[700]
+              : null, // Grey color for "Cases" item
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: ListTile(
+          contentPadding: const EdgeInsets.all(6.0),
+          leading: Icon(
+            icon,
+            color: text == 'Cases' ? Colors.white : Colors.grey,
+          ),
+          title: Text(
+            text,
+            style: TextStyle(
+              color: text == 'Cases' ? Colors.white : Colors.grey,
+              fontWeight: text == 'Cases' ? FontWeight.bold : FontWeight.normal,
+            ),
+          ),
+        ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

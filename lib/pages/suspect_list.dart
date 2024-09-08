@@ -1,10 +1,13 @@
-//this page allows the user to add suspects. Used shared pref
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:spynetra_tmp/pages/sidebar_pages/faq_page.dart';
+import 'package:spynetra_tmp/pages/sidebar_pages/profile_page.dart';
+import 'package:spynetra_tmp/pages/sidebar_pages/settings_page.dart';
 import 'package:spynetra_tmp/widgets/folders.dart';
 import 'package:spynetra_tmp/constants/constants.dart';
 import 'package:spynetra_tmp/pages/suspect_details.dart';
+import 'package:spynetra_tmp/pages/main_screen.dart';
+import 'package:spynetra_tmp/widgets/sidebar.dart'; // Ensure to import the BaseScaffold
 
 class SuspectList extends StatefulWidget {
   final String caseTitle;
@@ -42,8 +45,6 @@ class SuspectListState extends State<SuspectList> {
       _saveSuspects();
     });
   }
-
-//dialog box for adding a suspect that requires the name of the suspect
 
   void _showAddSuspectDialog() {
     TextEditingController controller = TextEditingController();
@@ -89,75 +90,203 @@ class SuspectListState extends State<SuspectList> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.caseTitle), // Display the case title
-      ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          int crossAxisCount;
-          if (constraints.maxWidth < 600) {
-            crossAxisCount = 2;
-          } else if (constraints.maxWidth < 1200) {
-            crossAxisCount = 3;
-          } else {
-            crossAxisCount = 5;
-          }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isDesktop = constraints.maxWidth >= 1200;
+        bool isMobile = constraints.maxWidth < 600;
 
-          return Center(
-            child: Padding(
+        if (isDesktop) {
+          // Desktop version
+          return Scaffold(
+            backgroundColor: Colors.black,
+            body: Row(
+              children: [
+                // Sidebar content
+                Container(
+                  width: 250.0,
+                  color: Colors.black,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: SizedBox(
+                          width: 230,
+                          height: 100,
+                          child: Image.asset('assets/logo.png'),
+                        ),
+                      ),
+                      const SizedBox(height: 30.0),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              _buildSidebarItem(context, 0, Icons.folder,
+                                  'Cases', const MainScreen()),
+                              _buildSidebarItem(context, 1, Icons.settings,
+                                  'Settings', const SettingsScreen()),
+                              _buildSidebarItem(context, 2, Icons.person,
+                                  'Profile', const ProfilePage()),
+                              _buildSidebarItem(context, 3, Icons.help, 'FAQ',
+                                  const FaqPage()),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[850],
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.arrow_back,
+                                    color: Colors.white),
+                                onPressed: () {
+                                  Navigator.pop(
+                                      context); // Go back to the previous page
+                                },
+                              ),
+                              Text(
+                                widget.caseTitle,
+                                style: const TextStyle(
+                                    fontSize: 24, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 24.0),
+                          Expanded(
+                            child: _suspects.isEmpty
+                                ? const Center(
+                                    child: Text('No suspects added yet.',
+                                        style: TextStyle(color: Colors.white)),
+                                  )
+                                : GridView.builder(
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 5,
+                                      crossAxisSpacing: 16.0,
+                                      mainAxisSpacing: 16.0,
+                                      childAspectRatio: 1.2,
+                                    ),
+                                    itemCount: _suspects.length,
+                                    itemBuilder: (context, index) {
+                                      return FolderIcon(
+                                        text: _suspects[index],
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SuspectDetail(
+                                                      suspectName:
+                                                          _suspects[index]),
+                                            ),
+                                          );
+                                        },
+                                        iconSize: 80,
+                                      );
+                                    },
+                                  ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            floatingActionButton: LayoutBuilder(
+              builder: (context, constraints) {
+                double buttonWidth = constraints.maxWidth * 0.2;
+                return SizedBox(
+                  width: buttonWidth,
+                  height: 50.0,
+                  child: ElevatedButton(
+                    onPressed: _showAddSuspectDialog,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Pallete.plusButton,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Text(
+                      ' + Add Suspect',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                );
+              },
+            ),
+            floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          );
+        } else {
+          // Mobile and tablet version
+          return BaseScaffold(
+            body: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: constraints.maxWidth < 600 ? 16.0 : 32.0,
+                horizontal: isMobile ? 16.0 : 32.0,
                 vertical: 16.0,
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Suspects",
-                    style: TextStyle(fontSize: 24),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.arrow_back, color: Colors.white),
+                        onPressed: () {
+                          Navigator.pop(
+                              context); // Go back to the previous page
+                        },
+                      ),
+                      Text(
+                        widget.caseTitle,
+                        style:
+                            const TextStyle(fontSize: 24, color: Colors.white),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 24.0),
                   Expanded(
                     child: _suspects.isEmpty
                         ? const Center(
-                            child: Text('No suspects added yet.'),
+                            child: Text('No suspects added yet.',
+                                style: TextStyle(color: Colors.white)),
                           )
                         : GridView.builder(
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: crossAxisCount,
-                              crossAxisSpacing: 0.0,
-                              mainAxisSpacing: 0.0,
+                              crossAxisCount: isMobile ? 2 : 3,
+                              crossAxisSpacing: 16.0,
+                              mainAxisSpacing: 16.0,
                               childAspectRatio: 1.2,
                             ),
                             itemCount: _suspects.length,
                             itemBuilder: (context, index) {
-                              return GestureDetector(
+                              return FolderIcon(
+                                text: _suspects[index],
                                 onTap: () {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => SuspectDetail(
-                                        suspectName: _suspects[index],
-                                      ),
+                                          suspectName: _suspects[index]),
                                     ),
                                   );
                                 },
-                                child: FolderIcon(
-                                  text: _suspects[index],
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => SuspectDetail(
-                                          suspectName: _suspects[index],
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  iconSize: 100,
-                                ),
+                                iconSize: 80,
                               );
                             },
                           ),
@@ -165,34 +294,59 @@ class SuspectListState extends State<SuspectList> {
                 ],
               ),
             ),
-          );
-        },
-      ),
-      floatingActionButton: LayoutBuilder(
-        builder: (context, constraints) {
-          double buttonWidth =
-              constraints.maxWidth < 600 ? constraints.maxWidth * 0.8 : 200.0;
-
-          return SizedBox(
-            width: buttonWidth,
-            height: 50.0,
-            child: ElevatedButton(
-              onPressed: _showAddSuspectDialog,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Pallete.plusButton,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-              ),
-              child: const Text(
-                ' + Add Suspect',
-                style: TextStyle(color: Colors.white),
-              ),
+            floatingActionButton: LayoutBuilder(
+              builder: (context, constraints) {
+                double buttonWidth =
+                    isMobile ? constraints.maxWidth * 0.8 : 200.0;
+                return SizedBox(
+                  width: buttonWidth,
+                  height: 50.0,
+                  child: ElevatedButton(
+                    onPressed: _showAddSuspectDialog,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Pallete.plusButton,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Text(
+                      ' + Add Suspect',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                );
+              },
             ),
+            floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
           );
-        },
+        }
+      },
+    );
+  }
+
+  Widget _buildSidebarItem(BuildContext context, int index, IconData icon,
+      String text, Widget destination) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => destination,
+          ),
+        );
+      },
+      child: ListTile(
+        contentPadding: const EdgeInsets.all(16.0),
+        leading: Icon(
+          icon,
+          color: Colors.grey,
+        ),
+        title: Text(
+          text,
+          style: const TextStyle(color: Colors.grey),
+        ),
+        tileColor: Colors.black,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

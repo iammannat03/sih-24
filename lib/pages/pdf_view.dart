@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart'; // Import for MediaType
-import 'package:path/path.dart'; // For file path operations
+import 'package:path/path.dart';
+import 'package:spynetra_tmp/constants/constants.dart'; // For file path operations
 
 class DocumentDetailScreen extends StatefulWidget {
   final Map<String, String> document;
@@ -11,10 +12,10 @@ class DocumentDetailScreen extends StatefulWidget {
   const DocumentDetailScreen({super.key, required this.document});
 
   @override
-  _DocumentDetailScreenState createState() => _DocumentDetailScreenState();
+  DocumentDetailScreenState createState() => DocumentDetailScreenState();
 }
 
-class _DocumentDetailScreenState extends State<DocumentDetailScreen> {
+class DocumentDetailScreenState extends State<DocumentDetailScreen> {
   String? _selectedFileName;
   File? _selectedFile;
   bool _isUploading = false;
@@ -93,8 +94,14 @@ class _DocumentDetailScreenState extends State<DocumentDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Pallete.screen,
       appBar: AppBar(
-        title: const Text('Document Details'),
+        backgroundColor: Pallete.appbar,
+        title: const Text(
+          'Document Details',
+          style: TextStyle(color: Pallete.text),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -102,10 +109,10 @@ class _DocumentDetailScreenState extends State<DocumentDetailScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('URL: ${widget.document['url']}',
-                style: const TextStyle(fontSize: 16.0)),
+                style: const TextStyle(fontSize: 16.0, color: Pallete.text)),
             const SizedBox(height: 10.0),
             Text('Username: ${widget.document['username']}',
-                style: const TextStyle(fontSize: 16.0)),
+                style: const TextStyle(fontSize: 16.0, color: Pallete.text)),
             const SizedBox(height: 10.0),
             Text('Password: ${widget.document['password']}',
                 style: const TextStyle(fontSize: 16.0, color: Colors.red)),

@@ -37,7 +37,10 @@ class FolderIconState extends State<FolderIcon> {
               color: _isHovering ? Pallete.hover : Pallete.folder,
             ),
             const SizedBox(height: 4.0),
-            Text(widget.text),
+            Text(
+              widget.text,
+              style: const TextStyle(color: Colors.white),
+            ),
           ],
         ),
       ),
