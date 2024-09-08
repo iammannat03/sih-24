@@ -20,16 +20,14 @@ def maps():
     # Access environment variables
     API_KEY1 = os.getenv('API_KEY1')
     API_KEY2 = os.getenv('API_KEY2')
-    API_KEY1 = '66dccf04a1b52010117033orb17d030'
     query = location
-    url = 'https://geocode.maps.co/search?q={}&api_key={}'.format(query.replace(' ', '+'), API_KEY)
+    url = 'https://geocode.maps.co/search?q={}&api_key={}'.format(query.replace(' ', '+'), API_KEY1)
     response = requests.get(url)
     json_data = response.json()
-    API_KEY2 = 'd6b1110a7e104e9b8972237b54552f2b'
     lat = json_data[0]['lat']
     lon = json_data[0]['lon']
     display_name = json_data[0]['display_name']
-    url = "https://maps.geoapify.com/v1/staticmap?style=osm-bright&width=600&height=400&center=lonlat:{},{}&zoom=14&apiKey={}".format(lon, lat, API_KEY)
+    url = "https://maps.geoapify.com/v1/staticmap?style=osm-bright&width=600&height=400&center=lonlat:{},{}&zoom=14&apiKey={}".format(lon, lat, API_KEY2)
 
     response = requests.get(url)
     with open('map_image.png', 'wb') as file:

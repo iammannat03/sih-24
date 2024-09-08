@@ -4,9 +4,10 @@ from reportlab.lib import colors
 from reportlab.lib.units import inch
 from reportlab.lib.utils import ImageReader
 from reportlab.platypus import Table, TableStyle  # Import Table and TableStyle
-from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import Paragraph
 from reportlab.platypus import Image
+from reportlab.lib.enums import TA_JUSTIFY
 # name,username,password,
 
 def convert_data_to_paragraph(data):
@@ -22,7 +23,7 @@ def convert_data_to_paragraph(data):
     return data_with_paragraphs
 
 
-def create_pdf(image_path,name,email,username,password,device_data,account_info,login_info,location):
+def create_pdf(image_path,name,email,username,password,device_data,account_info,login_info,location,AI_summary):
     c = canvas.Canvas("section.pdf", pagesize=LETTER)
 
     # Set background color (optional) for a section
@@ -185,6 +186,28 @@ def create_pdf(image_path,name,email,username,password,device_data,account_info,
  # Set the wrapping (dynamic size)
     table.drawOn(c, 0.75 * inch, 5.25 * inch-space_after_upper_section)  # Position it on the canvas
 
+
+    c.setFont("Helvetica-Bold", 14)
+    c.setFillColorRGB(0, 0, 0)
+    c.drawString(1 * inch, 3.3 * inch, "AI SUMMARY:")  # Title
+# Draw the underline
+    c.setStrokeColorRGB(0, 0, 0)  # Black color
+    c.setLineWidth(1.5)  # Width of the underline
+    text_width = c.stringWidth("AI SUMMARY:", "Helvetica-Bold", 14)
+    c.line(1 * inch, 3.3 * inch - 2, 1 * inch + text_width, 3.3 * inch - 2)
+
+    styles = getSampleStyleSheet()
+    custom_style = ParagraphStyle('CustomStyle', parent=styles['Normal'],
+                              fontSize=12,
+                                fontName='Helvetica',
+                                alignment=TA_JUSTIFY)
+
+    # Create the paragraph with the custom style
+    p = Paragraph(AI_summary, custom_style)
+
+    # Wrap and draw the paragraph
+    p.wrapOn(c, 6*inch, 12*inch)  # Adjust width and height as needed
+    p.drawOn(c, 1*inch, 1.5*inch)
 
     c.showPage()
 

@@ -4,6 +4,8 @@ import datetime
 import re
 import pdf_generator
 import maps
+import gemini
+import time
 
 def get_image():
     # Define the base path
@@ -140,7 +142,7 @@ for login in json_data.get('devices_devices'):
     i+=1
 
 
-def get_info():
+def get_info(AI_summary):
     image_path = get_image()
     name = personal_information()[0]
     email = personal_information()[1]
@@ -149,7 +151,40 @@ def get_info():
     account_info = account_information()
     login_info = last_login_info()
     display_name = maps.maps()
-    pdf_generator.create_pdf(image_path=image_path,name=name,email=email,username=username,password=password,device_data=devices_result,account_info=account_info,login_info=login_info,location=display_name)
+    
+
+    pdf_generator.create_pdf(image_path=image_path,name=name,email=email,username=username,password=password,device_data=devices_result,account_info=account_info,login_info=login_info,location=display_name,AI_summary=AI_summary)
+
+
+
+
+def feed_ai():
+    # Assuming each function call returns a list or a single value
+    image_path = get_image()
+    name = personal_information()[0]
+    email = personal_information()[1]
+    username = personal_information()[2]
+    password = personal_information()[3]
+    account_info = account_information()  # Assuming this is a list
+    login_info = last_login_info()  # Assuming this is a list
+    display_name = maps.maps()  # Assuming this is a list
+
+    # Combine all data into a single string, separating each value with '\n'
+    combined_string = f"{image_path}\n{name}\n{email}\n{username}\n{password}\n"
+
+    # Append the data from account_info, login_info, and display_name, assuming they are lists
+    combined_string += "\n".join(map(str, account_info)) + "\n"
+    combined_string += "\n".join(map(str, login_info)) + "\n"
+    combined_string += "\n" + display_name
+
+    return combined_string
+message = feed_ai()
+
+
+ai_summary_data = gemini.ai_summary(message)
+ai_data = json.loads(ai_summary_data)
+ai_text = text = ai_data['response']
+get_info(AI_summary=ai_text)
 
 
 
