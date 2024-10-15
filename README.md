@@ -4,8 +4,6 @@
 
 ## Screenshots
 
-Below are some screenshots showcasing the current user interface of **SpyNetra**:
-
 <p align="center">
   <img src="https://github.com/iammannat03/sih-24/blob/main/assets/readme-assets/Screenshot%202024-10-15%20at%204.04.02%E2%80%AFPM.jpg?raw=true" alt="Screenshot 1" width="45%" style="padding: 10px;">
   <img src="https://github.com/iammannat03/sih-24/blob/main/assets/readme-assets/Screenshot%202024-10-15%20at%204.04.18%E2%80%AFPM.jpg?raw=true" alt="Screenshot 2" width="45%" style="padding: 10px;">
